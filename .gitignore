@@ -1,1 +1,4 @@
 xcuserdata
+node_modules
+*.xcworkspace
+ios/Pods
