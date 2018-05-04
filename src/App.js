@@ -32,6 +32,15 @@ export default class App extends Component {
             </Text>
           </TouchableOpacity>
         </View>
+        <View style={styles.button}>
+          <TouchableOpacity onPress={() => {
+            
+          }}>
+            <Text style={styles.text}>
+              Go back
+            </Text>
+          </TouchableOpacity>
+        </View>
       </View>
     );
   }

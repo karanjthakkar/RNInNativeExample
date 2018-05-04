@@ -39,6 +39,16 @@
     [btnRN setBackgroundColor:[UIColor blueColor]];
     [btnRN addTarget:self action:@selector(navigateToReactNative:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnRN];
+    
+    UINavigationController *navigation = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    int stackLength = [navigation viewControllers].count;
+    if (stackLength > 1) {
+        UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(20, 240, 200, 40)];
+        [back setTitle:@"Go back" forState:UIControlStateNormal];
+        [back setBackgroundColor:[UIColor blueColor]];
+        [back addTarget:self action:@selector(goBack:) forControlEvents:UIControlEventTouchUpInside];
+        [self.view addSubview:back];
+    }
 }
 
 - (void)navigateToNative:(UIButton *)sender {
@@ -49,6 +59,11 @@
 - (void)navigateToReactNative:(UIButton *)sender {
     ReactNativeViewController *newVc = [[ReactNativeViewController alloc] initWithOpenedFrom:@"native"];
     [self showViewController:newVc sender:self];
+}
+
+- (void)goBack:(UIButton *)sender {
+    UINavigationController *navigation = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
+    [navigation popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
