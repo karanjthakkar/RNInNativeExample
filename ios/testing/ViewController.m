@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import <React/RCTBundleURLProvider.h>
+#import <React/RCTRootView.h>
 
 @interface ViewController ()
 
@@ -15,6 +17,15 @@
 @implementation ViewController
 
 - (IBAction)openReactNativeScreen:(id)sender {
+    NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
+    
+    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
+                                                        moduleName: @"testing"
+                                                 initialProperties: nil
+                                                     launchOptions: nil];
+    UIViewController *vc = [[UIViewController alloc] init];
+    vc.view = rootView;
+    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
