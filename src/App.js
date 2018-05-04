@@ -5,7 +5,7 @@
  */
 
 import React, { Component } from 'react';
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { Text, View, TouchableOpacity, StyleSheet, NativeModules } from 'react-native';
 
 export default class App extends Component {
   render() {
@@ -34,7 +34,7 @@ export default class App extends Component {
         </View>
         <View style={styles.button}>
           <TouchableOpacity onPress={() => {
-            
+            NativeModules.NavigationBridge.pop();
           }}>
             <Text style={styles.text}>
               Go back

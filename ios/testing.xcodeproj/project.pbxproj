@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		BAA5F038209C9749001E0D9E /* NativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA5F037209C9749001E0D9E /* NativeViewController.m */; };
 		BAA5F03B209CA066001E0D9E /* ReactNativeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA5F03A209CA066001E0D9E /* ReactNativeViewController.m */; };
+		BAA5F03E209CACFA001E0D9E /* NavigationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA5F03D209CACFA001E0D9E /* NavigationBridge.m */; };
+		BAA5F041209CB44E001E0D9E /* ReactNativeHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BAA5F040209CB44E001E0D9E /* ReactNativeHelper.m */; };
 		BAD4DCEB20977CEC0037E8B7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD4DCEA20977CEC0037E8B7 /* AppDelegate.m */; };
 		BAD4DCF320977CEC0037E8B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BAD4DCF220977CEC0037E8B7 /* Assets.xcassets */; };
 		BAD4DCF920977CEC0037E8B7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD4DCF820977CEC0037E8B7 /* main.m */; };
@@ -22,6 +24,10 @@
 		BAA5F037209C9749001E0D9E /* NativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NativeViewController.m; sourceTree = "<group>"; };
 		BAA5F039209CA066001E0D9E /* ReactNativeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeViewController.h; sourceTree = "<group>"; };
 		BAA5F03A209CA066001E0D9E /* ReactNativeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeViewController.m; sourceTree = "<group>"; };
+		BAA5F03C209CACFA001E0D9E /* NavigationBridge.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NavigationBridge.h; sourceTree = "<group>"; };
+		BAA5F03D209CACFA001E0D9E /* NavigationBridge.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NavigationBridge.m; sourceTree = "<group>"; };
+		BAA5F03F209CB44E001E0D9E /* ReactNativeHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReactNativeHelper.h; sourceTree = "<group>"; };
+		BAA5F040209CB44E001E0D9E /* ReactNativeHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReactNativeHelper.m; sourceTree = "<group>"; };
 		BAD4DCE620977CEC0037E8B7 /* testing.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = testing.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAD4DCE920977CEC0037E8B7 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BAD4DCEA20977CEC0037E8B7 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -90,6 +96,10 @@
 				BAA5F037209C9749001E0D9E /* NativeViewController.m */,
 				BAA5F039209CA066001E0D9E /* ReactNativeViewController.h */,
 				BAA5F03A209CA066001E0D9E /* ReactNativeViewController.m */,
+				BAA5F03C209CACFA001E0D9E /* NavigationBridge.h */,
+				BAA5F03D209CACFA001E0D9E /* NavigationBridge.m */,
+				BAA5F03F209CB44E001E0D9E /* ReactNativeHelper.h */,
+				BAA5F040209CB44E001E0D9E /* ReactNativeHelper.m */,
 			);
 			path = testing;
 			sourceTree = "<group>";
@@ -213,7 +223,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAA5F041209CB44E001E0D9E /* ReactNativeHelper.m in Sources */,
 				BAD4DCF920977CEC0037E8B7 /* main.m in Sources */,
+				BAA5F03E209CACFA001E0D9E /* NavigationBridge.m in Sources */,
 				BAD4DCEB20977CEC0037E8B7 /* AppDelegate.m in Sources */,
 				BAA5F038209C9749001E0D9E /* NativeViewController.m in Sources */,
 				BAA5F03B209CA066001E0D9E /* ReactNativeViewController.m in Sources */,

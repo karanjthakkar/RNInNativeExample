@@ -8,6 +8,7 @@
 
 #import "NativeViewController.h"
 #import "ReactNativeViewController.h"
+#import "ReactNativeHelper.h"
 
 @interface NativeViewController ()
 
@@ -40,8 +41,7 @@
     [btnRN addTarget:self action:@selector(navigateToReactNative:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btnRN];
     
-    UINavigationController *navigation = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    int stackLength = [navigation viewControllers].count;
+    int stackLength = [[ReactNativeHelper navigationController] viewControllers].count;
     if (stackLength > 1) {
         UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(20, 240, 200, 40)];
         [back setTitle:@"Go back" forState:UIControlStateNormal];
@@ -62,8 +62,7 @@
 }
 
 - (void)goBack:(UIButton *)sender {
-    UINavigationController *navigation = (UINavigationController *)[UIApplication sharedApplication].keyWindow.rootViewController;
-    [navigation popViewControllerAnimated:YES];
+    [[ReactNativeHelper navigationController] popViewControllerAnimated:YES];
 }
 
 - (void)didReceiveMemoryWarning {
