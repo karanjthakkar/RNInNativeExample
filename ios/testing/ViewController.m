@@ -25,7 +25,8 @@
                                                      launchOptions: nil];
     UIViewController *vc = [[UIViewController alloc] init];
     vc.view = rootView;
-    [self presentViewController:vc animated:YES completion:nil];
+    [self showViewController:vc sender:self];
+//    [self presentViewController:vc animated:YES completion:nil];
 }
 
 - (void)viewDidLoad {
