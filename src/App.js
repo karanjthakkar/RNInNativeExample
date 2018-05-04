@@ -16,7 +16,9 @@ export default class App extends Component {
         </Text>
         <View style={styles.button}>
           <TouchableOpacity onPress={() => {
-
+            NativeModules.NavigationBridge.push({
+              'type': 'NATIVE'
+            });
           }}>
             <Text style={styles.text}>
               Go to Native
@@ -25,7 +27,9 @@ export default class App extends Component {
         </View>
         <View style={styles.button}>
           <TouchableOpacity onPress={() => {
-            
+            NativeModules.NavigationBridge.push({
+              'type': 'REACT_NATIVE'
+            });
           }}>
             <Text style={styles.text}>
               Go to React Native

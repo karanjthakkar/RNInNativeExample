@@ -8,6 +8,8 @@
 
 #import "NavigationBridge.h"
 #import "ReactNativeHelper.h"
+#import "NativeViewController.h"
+#import "ReactNativeViewController.h"
 #import <UIKit/UIKit.h>
 
 @implementation NavigationBridge
@@ -18,6 +20,17 @@ RCT_EXPORT_MODULE(NavigationBridge);
 - (dispatch_queue_t)methodQueue
 {
     return dispatch_get_main_queue();
+}
+
+RCT_EXPORT_METHOD(push:(NSDictionary *)params) {
+    NSString *type = [params valueForKey:@"type"];
+    if ([type isEqualToString:@"REACT_NATIVE"]) {
+        ReactNativeViewController *newVc = [[ReactNativeViewController alloc] initWithOpenedFrom:@"react native"];
+        [[ReactNativeHelper navigationController] showViewController:newVc sender:self];
+    } else if ([type isEqualToString:@"NATIVE"]) {
+        NativeViewController *newVc = [NativeViewController new];
+        [[ReactNativeHelper navigationController] showViewController:newVc sender:self];
+    }
 }
 
 RCT_EXPORT_METHOD(pop) {
