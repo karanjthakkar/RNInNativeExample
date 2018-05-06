@@ -9,7 +9,7 @@
 #import "ReactNativeViewController.h"
 
 #import <React/RCTRootView.h>
-#import <React/RCTBundleURLProvider.h>
+#import "ReactNativeHelper.h";
 
 @interface ReactNativeViewController ()
 
@@ -34,13 +34,10 @@
 }
 
 - (void)loadView {
-    NSURL *jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index" fallbackResource:nil];
-    RCTRootView *rootView = [[RCTRootView alloc] initWithBundleURL: jsCodeLocation
-                                                        moduleName: @"testing"
-                                                 initialProperties: @{
-                                                                      @"opened_from": self.openedFrom
-                                                                      }
-                                                     launchOptions: nil];
+    RCTRootView *rootView = [ReactNativeHelper getRootViewWithModuleName: @"testing"
+                                                       initialProperties: @{
+                                                                            @"opened_from": self.openedFrom
+                                                                            }];
     self.view = rootView;
 }
 

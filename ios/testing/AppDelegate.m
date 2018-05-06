@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NativeViewController.h"
+#import "ReactNativeHelper.h"
 
 @interface AppDelegate ()
 
@@ -22,6 +23,7 @@
     NativeViewController *vc = [NativeViewController new];
     self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:vc];
     [self.window makeKeyAndVisible];
+    [ReactNativeHelper createBridge];
     return YES;
 }
 
