@@ -16,7 +16,14 @@
 
 RCT_EXPORT_MODULE(NavigationBridge);
 
-// We are doing navigation operations, so make sure they are all on the UI Thread.
+/**
+ * We are doing navigation operations, so make sure they are all on the UI Thread.
+ * Or you can wrap specific methods that require the main queue like this:
+ *
+ * dispatch_async(dispatch_get_main_queue(), ^{
+ *   // method implementation
+ * });
+ */
 - (dispatch_queue_t)methodQueue
 {
     return dispatch_get_main_queue();
