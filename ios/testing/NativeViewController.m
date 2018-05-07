@@ -57,7 +57,9 @@
 }
 
 - (void)navigateToReactNative:(UIButton *)sender {
-    ReactNativeViewController *newVc = [[ReactNativeViewController alloc] initWithOpenedFrom:@"native"];
+    ReactNativeViewController *newVc = [[ReactNativeViewController alloc] initWithProps:@{
+                                                                                               @"opened_from": @"native"
+                                                                                               }];
     [self showViewController:newVc sender:self];
 }
 

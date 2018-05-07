@@ -13,17 +13,17 @@
 
 @interface ReactNativeViewController ()
 
-@property NSString *openedFrom;
+@property NSDictionary *initialProps;
 
 @end
 
 @implementation ReactNativeViewController
 
-- (instancetype)initWithOpenedFrom:(NSString *)openedFrom {
+- (instancetype)initWithProps:(NSDictionary *)initialProps {
     self = [super init];
     if (self)
     {
-        _openedFrom = openedFrom;
+        _initialProps = initialProps;
     }
     return self;
 }
@@ -35,9 +35,7 @@
 
 - (void)loadView {
     RCTRootView *rootView = [ReactNativeHelper getRootViewWithModuleName: @"testing"
-                                                       initialProperties: @{
-                                                                            @"opened_from": self.openedFrom
-                                                                            }];
+                                                       initialProperties: self.initialProps];
     self.view = rootView;
 }
 

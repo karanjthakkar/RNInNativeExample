@@ -9,6 +9,26 @@ import { Text, View, TouchableOpacity, StyleSheet, NativeModules } from 'react-n
 
 export default class App extends Component {
   render() {
+    if (this.props.presentation_type === 'MODAL') {
+      return (
+        <View style={styles.container}>
+          <Text style={styles.heading}>
+            React Native Modal Screen (from {this.props.opened_from})
+          </Text>
+          <View style={styles.button}>
+            <TouchableOpacity onPress={() => {
+              NativeModules.NavigationBridge.pop({
+                'presentation_type': this.props.presentation_type
+              });
+            }}>
+              <Text style={styles.text}>
+                Go back
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    }
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>
@@ -38,7 +58,19 @@ export default class App extends Component {
         </View>
         <View style={styles.button}>
           <TouchableOpacity onPress={() => {
-            NativeModules.NavigationBridge.pop();
+            NativeModules.NavigationBridge.push({
+              'type': 'REACT_NATIVE',
+              'presentation_type': 'MODAL'
+            });
+          }}>
+            <Text style={styles.text}>
+              Go to React Native (Modal)
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View style={styles.button}>
+          <TouchableOpacity onPress={() => {
+            NativeModules.NavigationBridge.pop({});
           }}>
             <Text style={styles.text}>
               Go back

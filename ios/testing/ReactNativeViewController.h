@@ -10,6 +10,6 @@
 
 @interface ReactNativeViewController : UIViewController
 
-- (instancetype) initWithOpenedFrom:(NSString *)openedFrom;
+- (instancetype) initWithProps:(NSDictionary *)initialProps;
 
 @end

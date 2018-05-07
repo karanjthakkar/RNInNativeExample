@@ -31,17 +31,30 @@ RCT_EXPORT_MODULE(NavigationBridge);
 
 RCT_EXPORT_METHOD(push:(NSDictionary *)params) {
     NSString *type = [params valueForKey:@"type"];
+    NSString *presentationType = [params valueForKey:@"presentation_type"] ?: @"";
     if ([type isEqualToString:@"REACT_NATIVE"]) {
-        ReactNativeViewController *newVc = [[ReactNativeViewController alloc] initWithOpenedFrom:@"react native"];
-        [[ReactNativeHelper navigationController] showViewController:newVc sender:self];
+        ReactNativeViewController *newVc = [[ReactNativeViewController alloc] initWithProps:@{
+                                                                                              @"opened_from": @"react native",
+                                                                                              @"presentation_type": presentationType
+                                                                                              }];
+        if ([presentationType isEqualToString:@"MODAL"]) {
+            [[ReactNativeHelper navigationController] presentViewController:newVc animated:YES completion:nil];
+        } else {
+            [[ReactNativeHelper navigationController] showViewController:newVc sender:self];
+        }
     } else if ([type isEqualToString:@"NATIVE"]) {
         NativeViewController *newVc = [NativeViewController new];
         [[ReactNativeHelper navigationController] showViewController:newVc sender:self];
     }
 }
 
-RCT_EXPORT_METHOD(pop) {
-    [[ReactNativeHelper navigationController] popViewControllerAnimated:YES];
+RCT_EXPORT_METHOD(pop:(NSDictionary *)params) {
+    NSString *presentationType = [params valueForKey:@"presentation_type"];
+    if ([presentationType isEqualToString:@"MODAL"]) {
+        [[ReactNativeHelper navigationController] dismissViewControllerAnimated:YES completion:nil];
+    } else {
+        [[ReactNativeHelper navigationController] popViewControllerAnimated:YES];
+    }
 }
 
 @end
