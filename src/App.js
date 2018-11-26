@@ -85,8 +85,9 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 74,
-    marginLeft: 20,
+    marginTop: 94,
+    paddingLeft: 20,
+    backgroundColor: 'rgb(0, 255, 255)',
   },
   heading: {
     fontSize: 18,
