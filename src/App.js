@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     fontSize: 18,
   },
   button: {
-    width: 200,
+    width: 240,
     height: 40,
     backgroundColor: 'blue',
     justifyContent: 'center',

@@ -25,17 +25,17 @@
     self.view = [[UIView alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     self.view.backgroundColor = [UIColor whiteColor];
     
-    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 64, 200, 40)];
+    UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(20, 64, 240, 40)];
     label.text = @"Native Screen";
     [self.view addSubview:label];
     
-    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, 120, 200, 40)];
+    UIButton *btn = [[UIButton alloc] initWithFrame:CGRectMake(20, 120, 240, 40)];
     [btn setTitle:@"Go to Native" forState:UIControlStateNormal];
     [btn setBackgroundColor:[UIColor blueColor]];
     [btn addTarget:self action:@selector(navigateToNative:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:btn];
     
-    UIButton *btnRN = [[UIButton alloc] initWithFrame:CGRectMake(20, 180, 200, 40)];
+    UIButton *btnRN = [[UIButton alloc] initWithFrame:CGRectMake(20, 180, 240, 40)];
     [btnRN setTitle:@"Go to React Native" forState:UIControlStateNormal];
     [btnRN setBackgroundColor:[UIColor blueColor]];
     [btnRN addTarget:self action:@selector(navigateToReactNative:) forControlEvents:UIControlEventTouchUpInside];
@@ -43,7 +43,7 @@
     
     int stackLength = [[ReactNativeHelper navigationController] viewControllers].count;
     if (stackLength > 1) {
-        UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(20, 240, 200, 40)];
+        UIButton *back = [[UIButton alloc] initWithFrame:CGRectMake(20, 240, 240, 40)];
         [back setTitle:@"Go back" forState:UIControlStateNormal];
         [back setBackgroundColor:[UIColor blueColor]];
         [back addTarget:self action:@selector(goBack:) forControlEvents:UIControlEventTouchUpInside];
